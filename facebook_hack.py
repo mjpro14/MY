@@ -130,14 +130,14 @@ class FaceBoom(object):
              sys.exit(1)
         write("[~] Checking for updates...\n")
         conn = httplib.HTTPSConnection("raw.githubusercontent.com")
-        conn.request("GET", "/Oseid/MY/version.txt")
+        conn.request("GET", "/MY/version.txt")
         repoVersion = conn.getresponse().read().strip().decode()
         with open(versionPath) as vf:
             currentVersion = vf.read().strip()
         if repoVersion == currentVersion:write("  [*] The script is up to date!\n")
         else:
                 print("  [+] An update has been found ::: Updating... ")
-                conn.request("GET", "/Oseid/MY/facebook_hack.py")
+                conn.request("GET", "/MY/facebook_hack.py")
                 newCode = conn.getresponse().read().strip().decode()
                 with open("facebook_hack.py", "w") as  facebook_hackScript:
                    faceBook_hackScript.write(newCode)
