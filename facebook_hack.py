@@ -129,14 +129,14 @@ class FaceBoom(object):
              sys.exit(1)
         write("[~] Checking for updates...\n")
         conn = httplib.HTTPSConnection("raw.githubusercontent.com")
-        conn.request("GET", "/Oseid/Facebook_hack/master/core/version.txt")
+        conn.request("GET", "/Oseid/MY/version.txt")
         repoVersion = conn.getresponse().read().strip().decode()
         with open(versionPath) as vf:
             currentVersion = vf.read().strip()
         if repoVersion == currentVersion:write("  [*] The script is up to date!\n")
         else:
                 print("  [+] An update has been found ::: Updating... ")
-                conn.request("GET", "/Oseid/FaceBook_hack/master/facebook_hack.py")
+                conn.request("GET", "/Oseid/MY/facebook_hack.py")
                 newCode = conn.getresponse().read().strip().decode()
                 with open("facebook_hack.py", "w") as  facebook_hackScript:
                    faceBook_hackScript.write(newCode)
@@ -145,7 +145,7 @@ class FaceBoom(object):
                 write("  [+] Successfully updated :)\n")
 
 parse = optparse.OptionParser(wi+"""
-Usage: python facebook_hack.py [OPTIONS...]
+OPTION LANG TO:
 -------------
 OPTIONS:
        |
@@ -275,6 +275,6 @@ if __name__=='__main__':
 #####################   END OF TOOL  #########################
 #####################                #########################
 ##############################################################
-#This Tool by Oseid Aldary
+#This Tool by MJ
 #Have a nice day :)
 #GoodBye
