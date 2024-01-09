@@ -94,11 +94,11 @@ class FaceBoom(object):
             return 0
         except(KeyboardInterrupt, EOFError):
             print(rd+"\n["+yl+"!"+rd+"]"+yl+" Aborting"+rd+"..."+wi)
-            time.sleep(1.5)
+            time.sleep(0.05)
             sys.exit(1)
         except Exception as e:
             print(rd+" Error: "+yl+str(e)+wi+"\n")
-            time.sleep(0.60)
+            time.sleep(0.05)
 
 
     def banner(self,target,wordlist,single_passwd):
@@ -130,14 +130,14 @@ class FaceBoom(object):
              sys.exit(1)
         write("[~] Checking for updates...\n")
         conn = httplib.HTTPSConnection("raw.githubusercontent.com")
-        conn.request("GET", "/MY/version.txt")
+        conn.request("GET", "/Oseid/MY/version.txt")
         repoVersion = conn.getresponse().read().strip().decode()
         with open(versionPath) as vf:
             currentVersion = vf.read().strip()
         if repoVersion == currentVersion:write("  [*] The script is up to date!\n")
         else:
                 print("  [+] An update has been found ::: Updating... ")
-                conn.request("GET", "/MY/facebook_hack.py")
+                conn.request("GET", "/Oseid/MY/facebook_hack.py")
                 newCode = conn.getresponse().read().strip().decode()
                 with open("facebook_hack.py", "w") as  facebook_hackScript:
                    faceBook_hackScript.write(newCode)
@@ -146,12 +146,12 @@ class FaceBoom(object):
                 write("  [+] Successfully updated :)\n")
 
 parse = optparse.OptionParser(wi+"""
-OPTION LANG TO:
+HACK TOOL By MJ
 -------------
 OPTIONS:
        |
     |--------
-    | -t <target email> [OR] <FACEBOOK ID>    ::> Specify target Email [OR] Target Profile ID
+    | -t <target email>   ::> Specify target Email [OR] Target Profile ID
     |--------
     | -w <wordlist Path>                      ::> Specify Wordlist File Path
     |--------
