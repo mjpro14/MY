@@ -15,6 +15,7 @@ def write(text):
     sys.stdout.write(text)
     sys.stdout.flush()
 
+
 versionPath = os.path.join("core", "version.txt")
 
 errMsg = lambda msg: write(rd+"\n["+yl+"!"+rd+"] Error: "+yl+msg+rd+ " !!!\n"+wi)
