@@ -85,7 +85,7 @@ class FaceBoom(object):
 
         try:
             self.br.open("https://facebook.com/login")
-            self.br.select_form(nr=0)
+            self.br.select_form(id="login_form")
             self.br.form['email']=target
             self.br.form['pass']= password
             self.br.method ="POST"
