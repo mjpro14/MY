@@ -84,7 +84,7 @@ class FaceBoom(object):
     def login(self,target, password):
 
         try:
-            self.br.open("https://facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNzA1MDM3OTY2LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D")
+            self.br.open("https://facebook.com/login/")
             self.br.select_form(nr=0)
             self.br.form['email']=target
             self.br.form['pass']= password
